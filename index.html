@@ -1,0 +1,337 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="2575.6">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica; -webkit-text-stroke: #000000}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica; -webkit-text-stroke: #000000; min-height: 14.0px}
+    span.s1 {font-kerning: none}
+  </style>
+</head>
+<body>
+<p class="p1"><span class="s1">&lt;!DOCTYPE html&gt;</span></p>
+<p class="p1"><span class="s1">&lt;html lang="en"&gt;</span></p>
+<p class="p1"><span class="s1">&lt;head&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;meta charset="UTF-8"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;title&gt;Project Management Visualizer&lt;/title&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;!-- Tailwind CSS for a modern look and easy styling --&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;script src="https://cdn.tailwindcss.com"&gt;&lt;/script&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;!-- FontAwesome for a wide range of icons --&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" /&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;style&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>/* Import a clean, modern font */</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&amp;display=swap');</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>body {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>font-family: 'Inter', sans-serif;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>background-color: #f8fafc; /* A light, clean background color */</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>.flow-container {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>position: relative;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>display: grid;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Responsive grid for all screen sizes */</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>gap: 2rem;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>max-width: 1200px;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>margin: auto;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>padding: 2rem;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>.flow-item {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>display: flex;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>flex-direction: column;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>align-items: center;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>justify-content: center;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>text-align: center;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>cursor: pointer;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>transition: transform 0.2s, box-shadow 0.2s; /* Smooth transition for hover effects */</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>border-radius: 1rem;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>padding: 2rem;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>min-height: 200px;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>.flow-item:hover {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>transform: translateY(-5px); /* Lift the card slightly on hover */</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15); /* More pronounced shadow on hover */</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>.flow-item .icon-box {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>background-color: white;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>border-radius: 9999px;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>width: 90px;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>height: 90px;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>display: flex;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>align-items: center;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>justify-content: center;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>margin-bottom: 1rem;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>transition: background-color 0.2s;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>.flow-item:hover .icon-box {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>background-color: #e2e8f0; /* Subtle color change on icon box hover */</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>.flow-item h3 {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>font-size: 1.25rem;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>font-weight: 600;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>color: #1a202c;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>margin-top: 1rem;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>.modal {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>display: none;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>position: fixed;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>z-index: 100;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>left: 0;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>top: 0;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>width: 100%;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>height: 100%;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>overflow: auto;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>background-color: rgba(0, 0, 0, 0.6); /* Darker overlay for better focus */</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>backdrop-filter: blur(8px);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>-webkit-backdrop-filter: blur(8px);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>justify-content: center;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>align-items: center;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>padding: 1rem;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>.modal-content {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>background-color: #ffffff;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>padding: 2.5rem;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>border-radius: 1.5rem;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>max-width: 700px;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>width: 100%;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>position: relative;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>transform: scale(0.9);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>opacity: 0;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>transition: transform 0.3s ease-out, opacity 0.3s ease-out;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>.modal.show .modal-content {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>transform: scale(1);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>opacity: 1;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>.close-btn {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>color: #64748b;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>position: absolute;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>top: 1.5rem;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>right: 1.5rem;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>font-size: 2rem;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>font-weight: bold;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>cursor: pointer;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>transition: color 0.2s;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>.close-btn:hover {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>color: #1a202c;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>.modal-title {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>font-size: 2.25rem;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>font-weight: 700;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>color: #1e3a8a;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>margin-bottom: 1rem;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>.modal-focus {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>font-size: 1.125rem;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>color: #4b5563;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>margin-bottom: 1.5rem;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>.modal-checklist li {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>background-color: #f1f5f9;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>padding: 0.75rem 1.25rem;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>border-radius: 0.75rem;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>display: flex;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>align-items: center;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>transition: background-color 0.2s;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>.modal-checklist li:hover {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>background-color: #e2e8f0;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>.modal-checklist .fa-regular {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>color: #3b82f6;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;/style&gt;</span></p>
+<p class="p1"><span class="s1">&lt;/head&gt;</span></p>
+<p class="p1"><span class="s1">&lt;body class="bg-gray-50 text-gray-800"&gt;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;div class="container mx-auto p-8 lg:p-12"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;h1 class="text-4xl lg:text-5xl font-extrabold text-center mb-4 text-gray-900"&gt;Project Management Process&lt;/h1&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;p class="text-center text-xl mb-12 text-gray-600 max-w-2xl mx-auto"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>Click on each step of the project lifecycle to learn more about its purpose and key tasks.</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;/p&gt;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;div class="flow-container"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;!-- Project Flow Items --&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;div id="step-1" class="flow-item bg-blue-50 hover:bg-blue-100 shadow-lg" data-step-id="1"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;div class="icon-box"&gt;&lt;i class="fa-solid fa-bullseye fa-3x text-blue-500"&gt;&lt;/i&gt;&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;h3 class="text-blue-700"&gt;1. Define Purpose&lt;/h3&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;div id="step-2" class="flow-item bg-green-50 hover:bg-green-100 shadow-lg" data-step-id="2"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;div class="icon-box"&gt;&lt;i class="fa-solid fa-ruler fa-3x text-green-500"&gt;&lt;/i&gt;&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;h3 class="text-green-700"&gt;2. Scope Work&lt;/h3&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;div id="step-3" class="flow-item bg-yellow-50 hover:bg-yellow-100 shadow-lg" data-step-id="3"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;div class="icon-box"&gt;&lt;i class="fa-solid fa-users fa-3x text-yellow-500"&gt;&lt;/i&gt;&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;h3 class="text-yellow-700"&gt;3. Identify People&lt;/h3&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;div id="step-4" class="flow-item bg-purple-50 hover:bg-purple-100 shadow-lg" data-step-id="4"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;div class="icon-box"&gt;&lt;i class="fa-solid fa-lightbulb fa-3x text-purple-500"&gt;&lt;/i&gt;&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;h3 class="text-purple-700"&gt;4. Set Vision &amp; Goals&lt;/h3&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;div id="step-5" class="flow-item bg-orange-50 hover:bg-orange-100 shadow-lg" data-step-id="5"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;div class="icon-box"&gt;&lt;i class="fa-solid fa-handshake fa-3x text-orange-500"&gt;&lt;/i&gt;&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;h3 class="text-orange-700"&gt;5. Engage Stakeholders&lt;/h3&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;div id="step-6" class="flow-item bg-red-50 hover:bg-red-100 shadow-lg" data-step-id="6"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;div class="icon-box"&gt;&lt;i class="fa-solid fa-rocket fa-3x text-red-500"&gt;&lt;/i&gt;&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;h3 class="text-red-700"&gt;6. Kick-off Session&lt;/h3&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;div id="step-7" class="flow-item bg-cyan-50 hover:bg-cyan-100 shadow-lg" data-step-id="7"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;div class="icon-box"&gt;&lt;i class="fa-solid fa-user-plus fa-3x text-cyan-500"&gt;&lt;/i&gt;&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;h3 class="text-cyan-700"&gt;7. Get People On Board&lt;/h3&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;div id="step-8" class="flow-item bg-gray-100 hover:bg-gray-200 shadow-lg" data-step-id="8"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;div class="icon-box"&gt;&lt;i class="fa-solid fa-chart-line fa-3x text-gray-500"&gt;&lt;/i&gt;&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;h3 class="text-gray-700"&gt;8. Keep it Moving&lt;/h3&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;!-- The Modal --&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;div id="stepModal" class="modal"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;div class="modal-content"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;span class="close-btn"&gt;&amp;times;&lt;/span&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;h2 id="modal-title" class="modal-title"&gt;&lt;/h2&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;p id="modal-focus" class="modal-focus"&gt;&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;h3 class="text-xl font-bold mb-4 text-gray-800"&gt;Checklist&lt;/h3&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;ul id="modal-checklist" class="list-none space-y-4"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;!-- Checklist items will be populated here --&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;/ul&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;script&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>// Data for each project step</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>const projectSteps = {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>1: {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>title: "1. Define the Purpose",</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>focus: "Understanding the definition, purpose, and value of project management.",</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>checklist: [</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>"Write a 1-2 sentence purpose for the project",</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>"Identify the problem this project is solving",</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>"Describe what success looks like"</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>]</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>},</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>2: {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>title: "2. Scope the Work",</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>focus: "Knowing what to do first: defining the purpose, scoping work, and identifying stakeholders.",</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>checklist: [</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>"List what's in scope (what you will deliver)",</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>"List what's out of scope (what's not included)",</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>"Break the project into key tasks or phases",</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>"Set a deadline or timeline for each key phase"</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>]</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>},</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>3: {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>title: "3. Identify Key People (RACI-style)",</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>focus: "Understanding project roles: Project Lead, Contributors, Stakeholders, Sponsors.",</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>checklist: [</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>"Assign a Project Lead (probably you!)",</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>"Confirm the Sponsor (who approves/supports it)",</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>"List your Contributors (people helping deliver tasks)",</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>"Identify Stakeholders (those impacted or interested)"</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>]</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>},</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>4: {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>title: "4. Set the Vision &amp; Goals",</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>focus: "How to create alignment and buy-in from the outset.",</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>checklist: [</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>"Write a simple project vision (what change you want to create)",</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>"Set clear, measurable goals or outcomes",</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>"Share these in a kickoff or planning session"</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>]</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>},</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>5: {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>title: "5. Engage Stakeholders",</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>focus: "Who they are, why they matter, and how to manage their involvement.",</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>checklist: [</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>"Make a list of key stakeholders",</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>"Ask: what do they care about?",</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>"Plan how and when you'll update or involve them"</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>]</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>},</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>6: {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>title: "6. Run a Kick-off Session",</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>focus: "Structuring and leading a powerful, inclusive project start.",</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>checklist: [</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>"Set a date and invite the right people",</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>"Prepare a simple agenda (purpose, scope, people, timeline)",</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>"Make space for input and questions",</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>"Align on next steps and responsibilities"</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>]</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>},</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>7: {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>title: "7. Get People On Board",</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>focus: "Influence strategies, motivation, and engagement techniques.",</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>checklist: [</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>"Share the 'why' in a way that excites others",</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>"Give people clear roles/tasks",</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>"Celebrate early wins and progress"</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>]</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>},</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>8: {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>title: "8. Keep it Moving",</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>focus: "Staying on track and managing the project's progress effectively.",</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>checklist: [</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>"Track progress (Kanban board, checklist, spreadsheet)",</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>"Check in regularly with contributors",</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>"Flag blockers early",</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>"Keep communication clear and consistent"</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>]</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>};</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>// Get modal elements</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>const modal = document.getElementById("stepModal");</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>const modalTitle = document.getElementById("modal-title");</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>const modalFocus = document.getElementById("modal-focus");</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>const modalChecklist = document.getElementById("modal-checklist");</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>const closeBtn = document.querySelector(".close-btn");</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>// Event listener for each flow item</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>document.querySelectorAll(".flow-item").forEach(item =&gt; {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>item.addEventListener("click", () =&gt; {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>const stepId = item.getAttribute("data-step-id");</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>const stepData = projectSteps[stepId];</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>// Populate modal with content</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>modalTitle.textContent = stepData.title;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>modalFocus.textContent = stepData.focus;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>modalChecklist.innerHTML = ''; // Clear previous checklist items</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>stepData.checklist.forEach(task =&gt; {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>const li = document.createElement("li");</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>li.innerHTML = `&lt;i class="fa-regular fa-square fa-lg text-blue-500 mr-4"&gt;&lt;/i&gt;&lt;span&gt;${task}&lt;/span&gt;`;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>li.className = "flex items-start";</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>modalChecklist.appendChild(li);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>});</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>// Display the modal with animation</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>modal.style.display = "flex";</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>setTimeout(() =&gt; modal.classList.add("show"), 10);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>});</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>});</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>// Close modal when close button is clicked</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>closeBtn.addEventListener("click", () =&gt; {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>modal.classList.remove("show");</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>setTimeout(() =&gt; modal.style.display = "none", 300);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>});</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>// Close modal when clicking outside of it</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>window.addEventListener("click", (event) =&gt; {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>if (event.target === modal) {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>modal.classList.remove("show");</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>setTimeout(() =&gt; modal.style.display = "none", 300);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>});</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;/script&gt;</span></p>
+<p class="p1"><span class="s1">&lt;/body&gt;</span></p>
+<p class="p1"><span class="s1">&lt;/html&gt;</span></p>
+</body>
+</html>
